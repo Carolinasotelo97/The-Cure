@@ -1,0 +1,17 @@
+TP2 - The Cure - Carolina Sotelo y Lucía Lucesoli
+
+Navegador de desarrollo y prueba: Google Chrome (versión actual, noviembre de 2026).
+Los archivos se probaron abriendo los HTML con doble click, sin Live Server.
+
+Recursos de CSS3 usados que dependen del navegador:
+- column-count (listas en dos columnas)
+- filter (fotos y mapa en escala de grises)
+- transform, transition y @keyframes (giros, efectos hover y la franja animada de canciones)
+- display: flow-root (para contener los elementos flotados)
+- :target (ventana modal de la ficha técnica de cada disco)
+
+Otros:
+- El cursor de púa es un PNG; si el navegador no lo toma, se ve la manito de siempre.
+- El reproductor de Spotify y el mapa de Google necesitan conexión a internet para verse.
+- La carpeta "diseno" tiene el diseño exportado en JPG. La home y la discografía están
+  divididas en dos partes cada una para que ninguna imagen supere los 300 KB.

@@ -1,0 +1,1063 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: "Rock Salt";
+	src: url("fuentes/rock-salt.woff2") format("woff2"),
+	     url("fuentes/rock-salt.woff") format("woff"),
+	     url("fuentes/rock-salt.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Space Grotesk";
+	src: url("fuentes/space-grotesk-400.woff2") format("woff2"),
+	     url("fuentes/space-grotesk-400.woff") format("woff"),
+	     url("fuentes/space-grotesk-400.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Space Grotesk";
+	src: url("fuentes/space-grotesk-600.woff2") format("woff2"),
+	     url("fuentes/space-grotesk-600.woff") format("woff"),
+	     url("fuentes/space-grotesk-600.ttf") format("truetype");
+	font-weight: 600;
+	font-style: normal;
+}
+
+/* general */
+body {
+	margin: 0;
+	background: url("../img/textura-grano.png"), url("../img/manchas.jpg") center top / 100% auto repeat-y #1c1233;
+	color: #f6eef2;
+	font-family: "Space Grotesk", Arial, Helvetica, sans-serif;
+	font-size: 17px;
+	line-height: 1.7;
+}
+h1, h2, h3 {
+	font-family: "Rock Salt", "Comic Sans MS", cursive;
+	font-weight: 400;
+	line-height: 1.25;
+}
+h2 {
+	margin: 0 0 20px;
+	font-size: 3.4em;
+	text-transform: lowercase;
+}
+h2::after {
+	content: "";
+	display: block;
+	width: 180px;
+	height: 14px;
+	margin-top: 12px;
+	background: url("../img/trazo-labial.png") center / 100% 100% no-repeat;
+	transform: rotate(-2deg);
+}
+h3 {
+	font-size: 1.5em;
+}
+h4 {
+	margin: 20px 0 10px;
+	font-size: 0.75em;
+	font-weight: 600;
+	letter-spacing: 0.3em;
+	text-transform: uppercase;
+	color: #c9b6f2;
+}
+p {
+	margin: 0 0 18px;
+}
+a {
+	color: #f6eef2;
+	transition: color 0.3s;
+}
+a:hover {
+	color: #ff6b9a;
+}
+a,
+summary {
+	cursor: url("../img/cursores/pua.png") 2 2, pointer;
+}
+abbr {
+	cursor: help;
+}
+strong {
+	font-weight: 600;
+	color: #ffffff;
+}
+em {
+	color: #ffd1e0;
+}
+.antetitulo {
+	margin: 0 0 10px;
+	font-size: 0.75em;
+	font-weight: 600;
+	letter-spacing: 0.35em;
+	text-transform: uppercase;
+	color: #4fd1c5;
+}
+.bajada {
+	width: 640px;
+	font-size: 1.15em;
+	color: #e0d6ea;
+}
+
+/* header */
+#encabezado {
+	display: flow-root;
+	position: relative;
+	z-index: 10;
+	padding: 26px 60px;
+}
+#encabezado h1 {
+	float: left;
+	margin: 0;
+	font-size: 1.75em;
+	transform: rotate(-4deg);
+}
+#encabezado h1 a {
+	display: block;
+	padding: 4px 16px;
+	text-decoration: none;
+	text-transform: lowercase;
+	background: url("../img/trazo-labial.png") center 70% / 100% 55% no-repeat;
+}
+#encabezado nav {
+	float: left;
+	margin: 14px 0 0 56px;
+}
+#encabezado ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#encabezado nav li {
+	display: inline-block;
+	margin-right: 30px;
+}
+#encabezado nav a {
+	text-decoration: none;
+	text-transform: lowercase;
+	letter-spacing: 0.06em;
+	font-size: 0.9em;
+	color: #e0d6ea;
+	padding-bottom: 4px;
+	border-bottom: 2px solid transparent;
+	transition: color 0.3s, border-color 0.3s;
+}
+#encabezado nav a:hover {
+	color: #ffffff;
+	border-bottom-color: rgba(232, 23, 63, 0.6);
+}
+#encabezado nav .activo {
+	color: #ffffff;
+	border-bottom-color: #e8173f;
+}
+.redes {
+	float: right;
+	margin-top: 4px;
+	font-size: 0;
+}
+.redes li {
+	display: inline-block;
+	margin-left: 6px;
+}
+.redes a {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	font-size: 0;
+	background: url("../img/sprite-redes.png") 0 0 no-repeat;
+	transition: transform 0.3s;
+}
+.redes a:hover {
+	transform: translateY(-3px);
+}
+.redes a[href*="thecure.com"]:hover { background-position: 0 -48px; }
+.redes a[href*="spotify"] { background-position: -48px 0; }
+.redes a[href*="spotify"]:hover { background-position: -48px -48px; }
+.redes a[href*="instagram"] { background-position: -96px 0; }
+.redes a[href*="instagram"]:hover { background-position: -96px -48px; }
+.redes a[href*="youtube"] { background-position: -144px 0; }
+.redes a[href*="youtube"]:hover { background-position: -144px -48px; }
+
+/* contenido */
+main {
+	display: block;
+}
+main > section,
+main > aside {
+	width: 1120px;
+	margin: 0 auto;
+	padding: 70px 0;
+}
+
+/* portada */
+#portada {
+	display: flow-root;
+	position: relative;
+	padding: 40px 0 70px;
+}
+.presentacion {
+	float: left;
+	width: 640px;
+	position: relative;
+}
+.nombre {
+	margin: 0 0 30px;
+	font-family: "Rock Salt", cursive;
+	font-size: 170px;
+	line-height: 0.95;
+	text-transform: lowercase;
+	text-shadow: 5px 5px 0 #7b3fe4;
+	background: url("../img/trazo-labial.png") 0 120px / 760px 120px no-repeat;
+}
+.nombre span {
+	display: block;
+}
+.presentacion h2 {
+	font-family: "Space Grotesk", Arial, sans-serif;
+	font-size: 1.75em;
+	letter-spacing: 0.02em;
+	margin-bottom: 16px;
+}
+.presentacion h2::after {
+	display: none;
+}
+.presentacion > p:last-child {
+	width: 520px;
+	color: #e0d6ea;
+}
+.presentacion::after {
+	content: "crawley, 1978";
+	position: absolute;
+	right: -60px;
+	bottom: 20px;
+	font-family: "Rock Salt", cursive;
+	font-size: 1.1em;
+	color: #e8173f;
+	transform: rotate(-8deg);
+}
+.polaroid {
+	float: right;
+	position: relative;
+	width: 340px;
+	margin: 40px 50px 0 0;
+	padding: 16px 16px 60px;
+	background-color: #f1ebe6;
+	box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+	transform: rotate(5deg);
+	transition: transform 0.5s;
+}
+.polaroid:hover {
+	transform: rotate(0deg) scale(1.03);
+}
+.polaroid::before {
+	content: "";
+	position: absolute;
+	top: -14px;
+	left: 110px;
+	width: 110px;
+	height: 30px;
+	background-color: rgba(230, 220, 200, 0.55);
+	transform: rotate(-6deg);
+}
+.polaroid img {
+	display: block;
+	filter: grayscale(100%) contrast(1.1);
+	transition: filter 0.5s;
+}
+.polaroid:hover img {
+	filter: grayscale(0%);
+}
+.polaroid figcaption {
+	position: absolute;
+	left: 22px;
+	bottom: 14px;
+	font-family: "Rock Salt", cursive;
+	font-size: 1.05em;
+	text-transform: lowercase;
+	color: #2a1a24;
+}
+.escuchar {
+	clear: right;
+	float: right;
+	position: relative;
+	width: 360px;
+	margin: 40px 130px 0 0;
+	padding: 18px 20px 20px;
+	background-color: rgba(28, 18, 51, 0.85);
+	border: 1px solid #4fd1c5;
+	border-radius: 16px;
+	transform: rotate(-2deg);
+	transition: transform 0.4s;
+}
+.escuchar:hover {
+	transform: rotate(0deg);
+}
+.escuchar::before {
+	content: "";
+	position: absolute;
+	top: -60px;
+	left: -150px;
+	width: 120px;
+	height: 80px;
+	background: url("../img/flecha.png") no-repeat;
+}
+.escuchar::after {
+	content: "ponelo fuerte";
+	position: absolute;
+	right: 10px;
+	bottom: -40px;
+	font-family: "Rock Salt", cursive;
+	font-size: 0.9em;
+	color: #c9b6f2;
+	transform: rotate(6deg);
+}
+.escuchar h3 {
+	margin: 0 0 12px;
+	font-family: "Space Grotesk", Arial, sans-serif;
+	font-size: 0.95em;
+	font-weight: 600;
+}
+iframe {
+	display: block;
+	max-width: 100%;
+	border: 0;
+	border-radius: 12px;
+}
+
+/* franja de canciones */
+.franja {
+	margin: 0;
+	padding: 16px 0;
+	overflow: hidden;
+	white-space: nowrap;
+	background-color: #e8173f;
+	font-family: "Rock Salt", cursive;
+	font-size: 2.1em;
+	text-transform: lowercase;
+	color: #1c1233;
+}
+.franja span {
+	display: inline-block;
+	animation: deslizar 25s linear infinite;
+}
+.franja span + span::before {
+	content: "✕";
+	margin: 0 26px;
+	font-size: 0.7em;
+	color: #f6eef2;
+}
+@keyframes deslizar {
+	from { transform: translateX(0); }
+	to { transform: translateX(-1200px); }
+}
+
+/* biografia */
+#biografia {
+	display: flow-root;
+}
+#biografia .intro {
+	float: left;
+	width: 420px;
+}
+#biografia article {
+	float: right;
+	width: 610px;
+}
+#biografia article h3 {
+	margin: 0 0 20px;
+	font-size: 1.3em;
+	color: #ff6b9a;
+}
+#biografia article p {
+	color: #e4daec;
+}
+#biografia article p:first-of-type::first-letter {
+	float: left;
+	margin: 10px 14px 0 0;
+	font-family: "Rock Salt", cursive;
+	font-size: 4.4em;
+	line-height: 0.9;
+	color: #e8173f;
+}
+#biografia article p:first-of-type::first-line {
+	color: #ffffff;
+}
+blockquote {
+	margin: 40px 0 0;
+	font-family: "Rock Salt", cursive;
+	font-size: 1.75em;
+	line-height: 1.4;
+	text-transform: lowercase;
+}
+blockquote p {
+	display: inline;
+}
+blockquote::before {
+	content: open-quote;
+	color: #e8173f;
+}
+blockquote::after {
+	content: close-quote;
+	color: #e8173f;
+}
+.cita-fuente {
+	margin-top: 14px;
+	font-size: 0.85em;
+	letter-spacing: 0.03em;
+	color: #c9b6f2;
+}
+
+.hitos {
+	clear: both;
+	padding-top: 60px;
+}
+.hitos h3,
+.caracteristicas h3,
+.instrumentos h3 {
+	margin: 0 0 30px;
+	font-family: "Space Grotesk", Arial, sans-serif;
+	font-size: 0.75em;
+	font-weight: 600;
+	letter-spacing: 0.35em;
+	text-transform: uppercase;
+	color: #c9b6f2;
+}
+.hitos ol {
+	display: flow-root;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.hitos li {
+	float: left;
+	position: relative;
+	width: 160px;
+	padding: 14px 18px 0 0;
+	box-sizing: border-box;
+	border-top: 2px solid rgba(232, 23, 63, 0.6);
+	font-size: 0.85em;
+	line-height: 1.5;
+	color: #d8cce4;
+}
+.hitos li::before {
+	content: "";
+	position: absolute;
+	top: -7px;
+	left: 0;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background-color: #e8173f;
+	transition: transform 0.3s;
+}
+.hitos li:nth-of-type(even)::before {
+	background-color: #4fd1c5;
+}
+.hitos li:hover::before {
+	transform: scale(1.6);
+}
+.hitos .anio {
+	display: block;
+	margin-bottom: 4px;
+	font-family: "Rock Salt", cursive;
+	font-size: 1.3em;
+	color: #f6eef2;
+}
+
+/* integrantes */
+#integrantes ul {
+	display: flow-root;
+	margin: 30px 0 0;
+	padding: 0;
+	list-style: none;
+}
+#integrantes li {
+	float: left;
+	width: 340px;
+	margin: 0 50px 30px 0;
+	padding-left: 16px;
+	box-sizing: border-box;
+	border-left: 2px solid rgba(232, 23, 63, 0.6);
+	transition: border-color 0.3s;
+}
+#integrantes li:nth-of-type(3n) {
+	margin-right: 0;
+}
+#integrantes li:nth-of-type(even) {
+	border-left-color: #4fd1c5;
+}
+#integrantes li:hover {
+	border-left-color: #e8173f;
+}
+#integrantes h3 {
+	margin: 0 0 4px;
+	font-size: 1.15em;
+}
+#integrantes li p {
+	margin: 0;
+	font-size: 0.9em;
+	color: #d8cce4;
+}
+
+/* genero */
+.tarjetas {
+	display: flow-root;
+	margin: 40px 0 0;
+	padding-bottom: 30px;
+}
+.tarjetas article {
+	float: left;
+	position: relative;
+	width: 350px;
+	min-height: 290px;
+	margin-right: 35px;
+	padding: 28px 26px;
+	box-sizing: border-box;
+	background-color: rgba(123, 63, 228, 0.16);
+	border: 1px solid rgba(201, 182, 242, 0.25);
+	border-radius: 4px;
+	transition: border-color 0.3s, transform 0.3s;
+}
+.tarjetas article:nth-of-type(2) {
+	transform: translateY(30px);
+}
+.tarjetas article:last-child {
+	margin-right: 0;
+}
+.tarjetas article:hover {
+	border-color: #ff6b9a;
+}
+.tarjetas article:nth-of-type(2)::before {
+	color: #4fd1c5;
+}
+.tarjetas article::before {
+	display: block;
+	font-family: "Rock Salt", cursive;
+	font-size: 2.4em;
+	line-height: 1;
+	color: #e8173f;
+}
+.tarjetas article:nth-of-type(1)::before { content: "01"; }
+.tarjetas article:nth-of-type(2)::before { content: "02"; }
+.tarjetas article:nth-of-type(3)::before { content: "03"; }
+.tarjetas h3 {
+	margin: 14px 0 8px;
+	font-family: "Space Grotesk", Arial, sans-serif;
+	font-size: 1.15em;
+	font-weight: 600;
+}
+.tarjetas p {
+	margin: 0;
+	font-size: 0.9em;
+	color: #d8cce4;
+}
+
+.caracteristicas,
+.instrumentos {
+	padding-top: 60px;
+}
+.caracteristicas ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	column-count: 2;
+	column-gap: 40px;
+}
+.caracteristicas li {
+	display: inline-block;
+	width: 100%;
+	padding: 10px 0 10px 46px;
+	box-sizing: border-box;
+	border-bottom: 1px solid rgba(201, 182, 242, 0.15);
+	color: #e4daec;
+	background: url("../img/trazo-labial.png") 0 21px / 30px 9px no-repeat;
+}
+
+.instrumentos ul {
+	display: flow-root;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.instrumentos li {
+	float: left;
+	width: 262px;
+	min-height: 150px;
+	margin-right: 24px;
+	padding: 22px 20px;
+	box-sizing: border-box;
+	background-color: rgba(123, 63, 228, 0.16);
+	border-top: 3px solid #e8173f;
+	transition: background-color 0.3s;
+}
+.instrumentos li:nth-of-type(2) {
+	border-top-color: #4fd1c5;
+}
+.instrumentos li:nth-of-type(3) {
+	border-top-color: #9b6cf0;
+}
+.instrumentos li:nth-of-type(4) {
+	border-top-color: #ff6b9a;
+}
+.instrumentos li:last-child {
+	margin-right: 0;
+}
+.instrumentos li:hover {
+	background-color: rgba(232, 23, 63, 0.12);
+}
+.instrumentos h4 {
+	margin: 0 0 8px;
+	font-family: "Rock Salt", cursive;
+	font-size: 1em;
+	font-weight: 400;
+	letter-spacing: 0;
+	text-transform: none;
+	color: #f6eef2;
+}
+.instrumentos li p {
+	margin: 0;
+	font-size: 0.9em;
+	color: #d8cce4;
+}
+
+#crawley {
+	display: flow-root;
+	padding-top: 60px;
+}
+#crawley div {
+	float: left;
+	width: 420px;
+	padding-top: 60px;
+}
+#crawley h3 {
+	margin: 0 0 14px;
+	font-size: 2.6em;
+	text-transform: lowercase;
+}
+#crawley div p:last-child {
+	color: #e0d6ea;
+}
+#crawley iframe {
+	float: right;
+	border-radius: 6px;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+	filter: grayscale(80%) contrast(1.1);
+	transform: rotate(-1deg);
+	transition: filter 0.5s, transform 0.5s;
+}
+#crawley iframe:hover {
+	filter: none;
+	transform: rotate(0deg);
+}
+
+/* curiosidades */
+#curiosidades {
+	display: flow-root;
+}
+#curiosidades details {
+	float: left;
+	position: relative;
+	width: 350px;
+	margin: 40px 35px 0 0;
+	padding: 24px 24px 26px;
+	box-sizing: border-box;
+	background-color: #ece4dc;
+	color: #3b2b33;
+	box-shadow: 0 18px 30px rgba(0, 0, 0, 0.5);
+	transform: rotate(-2deg);
+	transition: transform 0.3s;
+}
+#curiosidades details:nth-of-type(2) {
+	transform: rotate(1.5deg);
+}
+#curiosidades details:last-of-type {
+	margin-right: 0;
+	transform: rotate(-1deg);
+}
+#curiosidades details:hover {
+	transform: rotate(0deg) translateY(-6px);
+}
+#curiosidades details::before {
+	content: "";
+	position: absolute;
+	top: -14px;
+	left: 38%;
+	width: 100px;
+	height: 28px;
+	background-color: rgba(230, 220, 200, 0.6);
+	transform: rotate(-6deg);
+}
+summary {
+	font-family: "Rock Salt", cursive;
+	font-size: 1em;
+	line-height: 1.5;
+	color: #7a0c1e;
+}
+summary::after {
+	content: "tocá para leer +";
+	display: block;
+	margin-top: 6px;
+	font-family: "Space Grotesk", Arial, sans-serif;
+	font-size: 0.8em;
+	font-style: italic;
+	color: #8a7a82;
+}
+details[open] summary::after {
+	content: "cerrar -";
+}
+#curiosidades details p {
+	margin: 12px 0 0;
+	font-size: 0.9em;
+}
+#curiosidades em,
+#curiosidades cite {
+	color: #7a0c1e;
+}
+
+/* footer */
+#pie {
+	padding: 60px 120px 40px;
+	text-align: center;
+	background-color: rgba(20, 12, 38, 0.75);
+	border-top: 4px solid #e8173f;
+}
+.firma {
+	display: inline-block;
+	margin-bottom: 26px;
+	font-family: "Rock Salt", cursive;
+	font-size: 0.9em;
+	transform: rotate(-3deg);
+}
+.firma::after {
+	content: " ✕";
+	color: #e8173f;
+}
+#pie section {
+	width: 760px;
+	margin: 0 auto 26px;
+}
+#pie h2 {
+	margin-bottom: 10px;
+	font-size: 1.4em;
+	color: #e8173f;
+}
+#pie h2::after {
+	display: none;
+}
+#pie p {
+	font-size: 0.9em;
+	color: #e0d6ea;
+}
+#pie ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#pie li {
+	display: inline-block;
+	margin: 4px 13px;
+	font-size: 0.9em;
+}
+#pie a[href^="http"] {
+	color: #c9b6f2;
+	text-decoration-color: rgba(232, 23, 63, 0.7);
+}
+#pie a[href^="http"]:hover {
+	color: #ff6b9a;
+}
+#pie .copy {
+	margin: 0;
+	font-size: 0.8em;
+	color: #a596bd;
+}
+
+/* discografia */
+#discografia h2 {
+	width: 960px;
+}
+.menu-discos ul {
+	margin: 30px 0 20px;
+	padding: 0;
+	list-style: none;
+}
+.menu-discos li {
+	display: inline-block;
+	margin: 0 10px 10px 0;
+}
+.menu-discos a {
+	display: inline-block;
+	padding: 8px 20px;
+	font-size: 0.85em;
+	text-decoration: none;
+	text-transform: lowercase;
+	color: #e4daec;
+	border: 1px solid rgba(201, 182, 242, 0.35);
+	border-radius: 30px;
+	transition: background-color 0.3s, border-color 0.3s;
+}
+.menu-discos li:nth-of-type(2) a { border-color: #4fd1c5; }
+.menu-discos li:nth-of-type(3) a { border-color: #9b6cf0; }
+.menu-discos li:nth-of-type(4) a { border-color: #ff6b9a; }
+.menu-discos a:hover {
+	background-color: #e8173f;
+	border-color: #e8173f;
+	color: #ffffff;
+}
+.menu-discos .anio::before {
+	content: "· ";
+}
+
+.disco {
+	display: flow-root;
+	position: relative;
+	margin-top: 70px;
+	padding: 40px;
+	border-left: 3px solid transparent;
+	transition: border-color 0.5s, background-color 0.5s;
+}
+.disco:target {
+	border-left-color: #e8173f;
+	background: linear-gradient(90deg, rgba(232, 23, 63, 0.2), rgba(123, 63, 228, 0.12) 50%, rgba(123, 63, 228, 0) 85%);
+}
+.lado {
+	float: left;
+	width: 380px;
+}
+.info {
+	float: right;
+	width: 580px;
+}
+.portada {
+	position: relative;
+	z-index: 0;
+	width: 320px;
+	margin: 10px 0 0;
+	transform: rotate(-2deg);
+}
+.portada::before {
+	content: "";
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: -1;
+	width: 300px;
+	height: 300px;
+	background: url("../img/vinilo.png") no-repeat;
+	transform: translateX(95px) rotate(40deg);
+	transition: transform 0.8s ease-out;
+}
+.portada:hover::before {
+	transform: translateX(120px) rotate(220deg);
+}
+.portada img {
+	display: block;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+.portada figcaption {
+	margin-top: 14px;
+	font-size: 0.8em;
+	color: #c9b6f2;
+}
+.disco:nth-of-type(even) .lado {
+	float: right;
+	padding-left: 60px;
+	box-sizing: border-box;
+}
+.disco:nth-of-type(even) .portada {
+	transform: rotate(2deg);
+}
+.disco:nth-of-type(even) .portada::before {
+	left: auto;
+	right: 10px;
+	transform: translateX(-95px) rotate(-40deg);
+}
+.disco:nth-of-type(even) .portada:hover::before {
+	transform: translateX(-120px) rotate(-220deg);
+}
+.disco:nth-of-type(even) .info {
+	float: left;
+}
+.info h3 {
+	margin: 0;
+	font-size: 2.3em;
+}
+.info h3::before {
+	display: block;
+	margin-bottom: 16px;
+	font-size: 0.8em;
+	line-height: 1;
+	color: #e8173f;
+}
+.disco:nth-of-type(1) h3::before { content: "01"; }
+.disco:nth-of-type(2) h3::before { content: "02"; }
+.disco:nth-of-type(3) h3::before { content: "03"; }
+.disco:nth-of-type(4) h3::before { content: "04"; }
+.lanzamiento {
+	margin: 6px 0 0;
+	font-size: 0.75em;
+	letter-spacing: 0.3em;
+	text-transform: uppercase;
+	color: #c9b6f2;
+}
+.resena p {
+	font-size: 0.95em;
+	color: #d8cce4;
+}
+.temas ol {
+	margin: 0;
+	padding-left: 22px;
+	column-count: 2;
+	column-gap: 30px;
+	font-size: 0.9em;
+	line-height: 1.6;
+	color: #cfc3dc;
+}
+.temas strong {
+	color: #ff6b9a;
+}
+.nota {
+	margin: 8px 0 0;
+	font-size: 0.75em;
+	color: #a596bd;
+}
+.dato {
+	width: 320px;
+	margin-top: 30px;
+	box-sizing: border-box;
+	padding: 12px 18px;
+	background-color: #ece4dc;
+	color: #2a1a24;
+	font-size: 0.85em;
+	transform: rotate(-1deg);
+}
+.dato h4 {
+	margin: 0 0 2px;
+	font-family: "Rock Salt", cursive;
+	font-size: 1em;
+	font-weight: 400;
+	letter-spacing: 0;
+	text-transform: lowercase;
+	color: #7a0c1e;
+}
+.dato p {
+	margin: 0;
+}
+.dato cite,
+.dato em {
+	color: #7a0c1e;
+}
+.ver-ficha {
+	margin: 24px 0 0;
+}
+.ver-ficha a {
+	display: inline-block;
+	padding: 8px 20px;
+	font-size: 0.85em;
+	text-decoration: none;
+	text-transform: lowercase;
+	color: #ffffff;
+	background-color: #e8173f;
+	border-radius: 30px;
+	transition: background-color 0.3s, transform 0.3s;
+}
+.ver-ficha a:hover {
+	color: #ffffff;
+	background-color: #ff6b9a;
+	transform: translateY(-2px);
+}
+
+/* ficha tecnica */
+.modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 50;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(20, 12, 38, 0.88);
+}
+.modal:target {
+	display: block;
+	animation: aparecer 0.4s ease-out;
+}
+.modal-caja {
+	position: relative;
+	width: 560px;
+	margin: 110px auto 0;
+	padding: 40px 44px;
+	box-sizing: border-box;
+	background-color: #ece4dc;
+	color: #2a1a24;
+	box-shadow: 0 40px 80px rgba(0, 0, 0, 0.7);
+	transform: rotate(-1.2deg);
+}
+.modal-caja::before {
+	content: "";
+	position: absolute;
+	top: -14px;
+	left: 40%;
+	width: 110px;
+	height: 30px;
+	background-color: rgba(230, 220, 200, 0.6);
+	transform: rotate(-6deg);
+}
+.modal-caja h4 {
+	margin: 0;
+	color: #7a6a74;
+}
+.modal-disco {
+	margin: 4px 0 20px;
+	font-family: "Rock Salt", cursive;
+	font-size: 1.4em;
+	color: #7a0c1e;
+}
+.modal-caja dl {
+	display: flow-root;
+	margin: 0;
+	font-size: 0.9em;
+}
+.modal-caja dt {
+	float: left;
+	clear: left;
+	width: 130px;
+	font-weight: 600;
+	color: #7a0c1e;
+}
+.modal-caja dd {
+	margin: 0 0 10px 140px;
+}
+.modal-caja abbr {
+	color: #2a1a24;
+}
+.cerrar {
+	position: absolute;
+	top: -14px;
+	right: -14px;
+	width: 40px;
+	height: 40px;
+	font-size: 0;
+	text-decoration: none;
+	border-radius: 50%;
+	background-color: #e8173f;
+	transition: transform 0.3s;
+}
+.cerrar::before {
+	content: "X";
+	display: block;
+	font-family: "Rock Salt", cursive;
+	font-size: 16px;
+	line-height: 42px;
+	text-align: center;
+	color: #ffffff;
+}
+.cerrar:hover {
+	transform: rotate(90deg);
+}
+@keyframes aparecer {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
